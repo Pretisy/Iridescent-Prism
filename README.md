@@ -1,7 +1,6 @@
 # Iridescent-Prism
 # Smite Unreal Engine Game Software (https://www.smitegame.com)
-# DearImGui Software
-
+# DearImGui Software (https://github.com/ocornut/imgui)
 # Developer(s)	Pretisy
 # Publisher(s)	
 
