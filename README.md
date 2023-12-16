@@ -1,13 +1,11 @@
 # Iridescent-Prism
-# Smite Unreal Engine Game Software (https://www.smitegame.com)
-# DearImGui Software (https://github.com/ocornut/imgui)
-# Developer(s)	Pretisy
-# Publisher(s)	
 
-Iridescent-Prism is a software specifically made to help calculate niche builds & statistics.
+Iridescent-Prism is a software application designed for the calculation of specialized God builds, & in-depth statistics in Smite.
 
-Iridescent-Prism is using DearImGui for it's graphical user interface library & Operating System support.
-(https://github.com/ocornut/imgui)
+## Installation
 
-Iridescent-Prism is also using Googles C++ Style Guide as a guide to "keep the code base manageable while still allowing coders to use C++ language features productively".
-(https://google.github.io/styleguide/cppguide.html)
+To install download the "Iridescent Prism Release" folder & run Iridescent Prism.exe.
+
+# Acknowledgments
+- [Smite] (https://www.smitegame.com) - The game that inspired me create Iridescent-Prism.
+- [DearImGui] (https://github.com/ocornut/imgui) - The backbone & graphical user interface library used for Iridescent-Prism.
