@@ -4,8 +4,12 @@ Iridescent-Prism is a software application designed for the calculation of speci
 
 ## Installation
 
-To install download the "Iridescent Prism Release" folder & run Iridescent Prism.exe.
+To install Iridescent Prism, download the 'Iridescent Prism Release' folder & run the Iridescent Prism.exe.
 
 # Acknowledgments
-- [Smite] (https://www.smitegame.com) - The game that inspired me create Iridescent-Prism.
-- [DearImGui] (https://github.com/ocornut/imgui) - The backbone & graphical user interface library used for Iridescent-Prism.
+- [Smite](https://www.smitegame.com) - The game that inspired me to create Iridescent-Prism.
+- [DearImGui](https://github.com/ocornut/imgui) - The backbone & graphical user interface library used for Iridescent-Prism.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
