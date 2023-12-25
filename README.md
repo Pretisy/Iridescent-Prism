@@ -1,6 +1,6 @@
 # Iridescent-Prism
 
-Iridescent-Prism is a software application designed for the calculation of specialized God builds and in-depth statistics in Smite.
+Iridescent-Prism is a software application designed for the calculation of specialized God builds, & in-depth statistics in Smite.
 
 ## Installation
 
@@ -11,7 +11,7 @@ To install Iridescent Prism on Windows, follow these steps:
 
 ## Source Code
 
-To access and run the Iridescent Prism source code, follow these steps:
+To access & run the Iridescent Prism source code, follow these steps:
 
 1. Download the 'Iridescent Prism Source' folder.
 2. Clone the [DearImGui Github repository](https://github.com/ocornut/imgui).
