@@ -1,5 +1,6 @@
 #include "IridescentPrism.h"
 #include "imgui.h"
+#include <vector>
 
 namespace IridescentPrism
 {
@@ -18,6 +19,14 @@ namespace IridescentPrism
         const char* name;
         ItemType type;
         // Add more item attributes as needed
+    };
+
+    // Struct representing a god
+    struct God
+    {
+        const char* name;
+        const char* description;
+        // Add more god attributes as needed
     };
 
     // Function to render the item inventory
@@ -52,6 +61,34 @@ namespace IridescentPrism
         }
     }
 
+    // Function to render details of the selected god
+    void RenderGodDetails(const God& god)
+    {
+        // Display details of the selected god
+        ImGui::Text("Name: %s", god.name);
+        ImGui::Text("Description: %s", god.description);
+        // Add more details as needed
+    }
+
+    // Function to render the list of gods
+    void RenderGodList(const std::vector<God>& gods, int& selectedGodIndex)
+    {
+        for (int i = 0; i < gods.size(); ++i)
+        {
+            // Render each god as a button
+            if (ImGui::Button(gods[i].name, ImVec2(100, 100)))
+            {
+                // Update the selected god index when clicked
+                selectedGodIndex = i;
+            }
+
+            // Break the grid into two columns
+            if (i % 2 == 1 && i < gods.size() - 1)
+                ImGui::SameLine();
+        }
+    }
+
+
     void RenderUI()
     {
         static char inputBuffer[256] = {};  // Buffer to store entered text
@@ -63,6 +100,16 @@ namespace IridescentPrism
         static bool showItems = true;
 
         ImGui::DockSpaceOverViewport(ImGui::GetMainViewport());
+
+        //list of gods
+        static std::vector<God> gods = {
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            // Add more gods as needed
+        };
+
+        // Index of the selected god
+        static int selectedGodIndex = -1;
 
         // Main window
         ImGui::Begin("Smite Build Tool", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_MenuBar);
@@ -143,13 +190,20 @@ namespace IridescentPrism
         // Main content area
         ImGui::SameLine();
         float remainingWidth = ImGui::GetContentRegionAvail().x;
-        float inputFieldHeight = 30.0f; // Set the fixed height for the input field
+        float inputFieldHeight = 30.0f;
         ImGui::BeginChild("ContentArea", ImVec2(remainingWidth - 150, ImGui::GetContentRegionAvail().y - inputFieldHeight), true);
         if (selectedButton != -1)
         {
             // Switch based on the selected button
             switch (selectedButton)
             {
+            case 0: // Gods button
+                RenderGodList(gods, selectedGodIndex);
+                if (selectedGodIndex >= 0 && selectedGodIndex < static_cast<int>(gods.size()))
+                {
+                    RenderGodDetails(gods[selectedGodIndex]);
+                }
+                break;
             case 1: // Items button
                 RenderItemInventory();
                 break;
