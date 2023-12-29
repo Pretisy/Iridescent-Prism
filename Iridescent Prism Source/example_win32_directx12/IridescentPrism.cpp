@@ -70,24 +70,28 @@ namespace IridescentPrism
         // Add more details as needed
     }
 
-    // Function to render the list of gods
+    // Function to render the list of gods with columns
     void RenderGodList(const std::vector<God>& gods, int& selectedGodIndex)
     {
+        const int godsPerRow = 10;  // Adjust this value based on the number of gods per row
+        const float buttonSize = 100.0f;  // Adjust this value based on the size of each button
+        const float spacing = 10.0f;  // Adjust this value based on the spacing between buttons
+
         for (int i = 0; i < gods.size(); ++i)
         {
+            // Calculate the position of the button
+            float x = (i % godsPerRow) * (buttonSize + spacing);
+            float y = (i / godsPerRow) * (buttonSize + spacing);
+
+            ImGui::SetCursorPos(ImVec2(x, y));
+
             // Render each god as a button
-            if (ImGui::Button(gods[i].name, ImVec2(100, 100)))
+            if (ImGui::Button(gods[i].name, ImVec2(buttonSize, buttonSize)))
             {
-                // Update the selected god index when clicked
                 selectedGodIndex = i;
             }
-
-            // Break the grid into two columns
-            if (i % 2 == 1 && i < gods.size() - 1)
-                ImGui::SameLine();
         }
     }
-
 
     void RenderUI()
     {
@@ -103,6 +107,44 @@ namespace IridescentPrism
 
         //list of gods
         static std::vector<God> gods = {
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
+            {"Zeus", "God of the sky and thunder"},
+            {"Athena", "Goddess of wisdom and warfare"},
             {"Zeus", "God of the sky and thunder"},
             {"Athena", "Goddess of wisdom and warfare"},
             // Add more gods as needed
