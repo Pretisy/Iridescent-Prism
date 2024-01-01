@@ -4,6 +4,20 @@
 
 namespace IridescentPrism
 {
+
+    // Function to render the Gold Per 5 Seconds graph
+    void RenderStatistics()
+    {
+        // Dummy data for the Gold Per 5 Seconds graph (replace this with your actual data)
+        static const float goldData[] = { 0.0f, 10.0f, 20.0f, 15.0f, 25.0f, 30.0f, 35.0f, 40.0f, 50.0f, 45.0f };
+
+        // Number of data points
+        const int numDataPoints = IM_ARRAYSIZE(goldData);
+
+        // Plot the Gold Per 5 Seconds graph
+        ImGui::PlotLines("Gold Per 5 Seconds", goldData, numDataPoints, 0, nullptr, 0.0f, 60.0f, ImVec2(0, 80));
+    }
+
     // Enum representing different item types
     enum class ItemType
     {
@@ -252,6 +266,10 @@ namespace IridescentPrism
             case 2: // Builds button
                 // Render content for Builds
                 ImGui::Text("Content for Builds button goes here");
+                break;
+
+            case 3: // Statistics button
+                RenderStatistics();
                 break;
 
             case 4: // Settings button
