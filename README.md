@@ -1,4 +1,4 @@
-# Iridescent-Prism
+# Iridescent-Prism [Deprecated]
 
 Iridescent-Prism is a software application designed for the calculation of specialized God builds, & in-depth statistics in Smite.
 
